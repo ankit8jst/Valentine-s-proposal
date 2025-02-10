@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Aena!</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 20px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1, h2 {
+            color: #e91e63;
+            margin: 20px 0;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.8;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .heart {
+            color: red;
+            font-size: 40px;
+            animation: heartbeat 1.5s infinite ease-in-out;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 30%;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .music-button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 20px;
+        }
+        .music-button:hover {
+            background-color: #d81b60;
+            transform: scale(1.1);
+        }
+        .music-button:active {
+            transform: scale(0.95);
+        }
+        .nicknames {
+            font-style: italic;
+            color: #d81b60;
+            font-size: 22px;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .floating-hearts span {
+            position: absolute;
+            display: block;
+            color: #ff4081;
+            font-size: 30px;
+            animation: float 6s linear infinite;
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1) rotate(360deg); opacity: 0; }
+        }
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic">
+        <source src="audio/song.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-button" onclick="toggleMusic()">🎵 Play Music 🎶</button>
+
+    <script>
+        function toggleMusic() {
+            const audio = document.getElementById('backgroundMusic');
+            if (audio.paused) {
+                audio.play();
+                document.querySelector('.music-button').innerHTML = '⏸️ Pause Music';
+            } else {
+                audio.pause();
+                document.querySelector('.music-button').innerHTML = '🎵 Play Music 🎶';
+            }
+        }
+    </script>
+
+    <div class="container">
+        <h1>Happy Valentine's Day, Aena! <span class="heart">❤️🌹</span></h1>
+        <p>To my dearest <strong>Bbu 🥰 Ainu 💕</strong>,</p>
+
+        <h2>Our Beautiful Journey 🌸</h2>
+        <p>We first met in November, and since then, every moment we've shared has been magical. ✨💑</p>
+
+        <div class="gallery">
+            <img src="images/aena1.jpg" alt="Beautiful Moment 1">
+            <img src="images/aena2.jpg" alt="Beautiful Moment 2">
+            <img src="images/aena3.jpg" alt="Beautiful Moment 3">
+        </div>
+
+        <h2>Some Words For My Beloved 💞</h2>
+        <p class="nicknames">Babu 😘 Sona 💖 Janu 🥰 Bby 💕 Cutiepie 😍 Ainu 🌹</p>
+
+        <h2>Dreaming of Our Future 🌟</h2>
+        <p>Sometimes I think what and when that day will come when we together enjoy a long day together. 🌄 The thought of spending an entire day with you, laughing, talking, and creating memories fills my heart with joy. 🌈</p>
+
+        <h2>My Heartfelt Words ❤️</h2>
+        <p>When I listened to your voice note saying you love me for the first time, I melted right at that moment. 🥺 Whenever I see your pictures, I totally lose my consciousness. 😍 All day, I live with the memories of our late-night talks, and I eagerly wait for you to come online. 📱 I love when you take care of every little thing about me. 🌷</p>
+        <p>At last, I just want to say that I will never break your trust in me. I will always love you till my last breath. ❤️ Love you forever, my Aena. 💖</p>
+
+        <h2>A Note from my heart 💓</h2>
+        <p>"Aena, words often fall short when I try to express what you mean to me, but my heart ❤️ keeps urging me to pour out these feelings. You are the most beautiful chapter 📖 of my life, a story I never want to end. Your smile 😊 has the power to light up my darkest days 🌤️, and your presence feels like a gentle breeze 🌸 that calms my restless heart. Sometimes, I sit and wonder—what and when will that day come ⏳ when we can spend an entire day together 👫, just us, lost in time, with no worries, no rush, just the simplicity of being close to each other? I imagine walking side by side 🚶‍♂️🚶‍♀️, talking about everything and nothing 💬, sharing laughter 😂 that echoes like music 🎶, and stealing glances 👀 that say more than words ever could. Your eyes hold the depth of a universe 🌌 I want to get lost in, and your voice is the sweetest melody 🎵 my heart has ever heard. Every heartbeat ❤️‍🔥 whispers your name, every thought 🤔 carries a trace of you, and every dream 💭 feels incomplete without your presence. You are not just a part of my life—you are the rhythm to my heart 💓, the muse to my thoughts ✍️, and the peace to my soul 🕊️. My feelings for you grow stronger with each passing day 📆, and no distance or time can ever change that. I cherish you more than words can describe 💖, and I hope one day, we’ll create memories together 🌟 that are as beautiful as the love I hold for you in my heart. 💌"</p>
+
+        <p>With all my love, <br><strong>Ankit ❤️🌹</strong></p>
+
+        <div class="floating-hearts">
+            <span style="left: 10%; animation-delay: 0s;">💖</span>
+            <span style="left: 25%; animation-delay: 1s;">💗</span>
+            <span style="left: 50%; animation-delay: 2s;">💓</span>
+            <span style="left: 75%; animation-delay: 3s;">😘</span>
+            <span style="left: 90%; animation-delay: 4s;">😘</span>
+            <span style="left: 90%; animation-delay: 4s;">😘</span>
+            <span style="left: 90%; animation-delay: 1s;">😘</span>
+            <span style="left: 90%; animation-delay: 1s;">😘</span>
+            <span style="left: 90%; animation-delay: 1s;">😘</span>
+            <span style="left: 90%; animation-delay: 1s;">😘</span>
+            <span style="left: 20%; animation-delay: 2.5s;">🌹</span>
+            <span style="left: 40%; animation-delay: 3.5s;">🌸</span>
+            <span style="left: 70%; animation-delay: 4.5s;">🌟</span>
+        </div>
+    </div>
+</body>
+</html>
